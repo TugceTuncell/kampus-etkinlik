@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etkinlik Güncelle</title>
+</head>
+<body>
+    <header>
+        <h1>Kampüs Etkinlikleri</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="etkinlik-detay.html">Detay Gör</a>
+            <a href="etkinlik-ekle.html"> Etkinlik Ekle</a>
+            <a href="etkinlik-guncelle.html">Etkinlik Güncelle</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Etkinlik Güncelle</h2>
+        <form action="#" method="POST">
+            
+            <p>
+                <label for="etkinlikAd">Etkinlik Adı:</label><br>
+                <input type="text" id="etkinlikAd" name="etkinlikAd" value="Kariyer Günleri 2026" required>
+            </p>
+
+            <p>
+                <label for="kategori">Kategori:</label><br>
+                <select id="kategori" name="kategori" required>
+                    <option value="">Seçiniz...</option>
+                    <option value="seminer" selected>Seminer</option>
+                    <option value="atolye">Atölye</option>
+                    <option value="gosteri">Gösteri</option>
+                    <option value="spor">Spor</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="tarihSaat">Tarih / Saat:</label><br>
+                <input type="datetime-local" id="tarihSaat" name="tarihSaat" value="2026-12-15T14:00" required>
+            </p>
+
+            <p>
+                <label for="yer">Yer:</label><br>
+                <input type="text" id="yer" name="yer" value="A Blok Konferans Salonu" required>
+            </p>
+
+            <p>
+                <label for="aciklama">Açıklama:</label><br>
+                <textarea id="aciklama" name="aciklama" rows="5" cols="30" required>Sektörden önemli isimlerin katılacağı kariyer gelişim semineridir.</textarea>
+            </p>
+
+            <p>
+                <button type="submit">Güncelle</button>
+            </p>
+
+        </form>
+    </main>
+
+    <br>
+    <footer>
+        <p>Tuğçe Tuncel &middot; 2311012063 &middot; 2026</p>
+    </footer>
+
+</body>
+</html>
