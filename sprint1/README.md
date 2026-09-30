@@ -3,7 +3,7 @@
 Bu proje, Süleyman Demirel Üniversitesi kampüsünde gerçekleştirilecek olan seminer, atölye ve spor müsabakası gibi etkinliklerin takibini sağlamak amacıyla geliştirilen web uygulamasının ilk sprint teslimidir. 
 
 ## Canlı Yayın Adresi
-🔗 **[Vercel canlı linkini buraya yapıştırın]**
+🔗 **[npx plugins add vercel/vercel-plugin]**
 
 ## Geliştirici Bilgileri
 * **Öğrenci:** Tuğçe Tuncel - Bilgisayar Mühendisliği
