@@ -1,0 +1,124 @@
+/* TUĞÇE TUNCEL-2311012063 */
+:root {
+  --no: 2311012063; 
+  --ton: mod(var(--no), 360);
+  --renk-ana: hsl(var(--ton) 65% 38%);
+  --renk-zemin: hsl(var(--ton) 30% 97%);
+  --font: "Trebuchet MS"; 
+  --bosluk-m: 1rem;
+  --kose: 8px;
+}
+
+body { 
+  font-family: var(--font); 
+  background-color: var(--renk-zemin);
+  margin: 0;
+}
+
+
+header {
+  background-color: var(--renk-ana);
+  color: white;
+  padding: var(--bosluk-m);
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bosluk-m);
+}
+
+
+article {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: var(--kose);
+  padding: var(--bosluk-m);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+
+@media (min-width: 768px) {
+  section {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+form {
+  padding: var(--bosluk-m);
+}
+
+label {
+  display: block; 
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%; 
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: var(--kose);
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+button {
+  background-color: var(--renk-ana);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border-radius: var(--kose);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+input:user-invalid, select:user-invalid, textarea:user-invalid {
+  border: 2px solid red;
+  background-color: #fff0f0;
+}
+input:invalid, select:invalid, textarea:invalid {
+  border: 1px solid red;
+}
+
+.detay-izgara {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bosluk-m);
+}
+
+@media (min-width: 768px) {
+  .detay-izgara {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+}
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 20px;
+  margin: 0 0 20px 0;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0;
+}
+figure {
+  margin: 0;
+}
+figure img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: var(--kose);
+  display: block;
+}
