@@ -1,13 +1,13 @@
 /* TUĞÇE TUNCEL-2311012063 */
 :root {
-  --no: 2311012063;
-  --renk-ana: #c62828;
-  --renk-zemin: #fff5f5;
-  --font: "Trebuchet MS";
+  --no: 2311012063; 
+  --ton: mod(var(--no), 360);
+  --renk-ana: hsl(var(--ton) 65% 38%);
+  --renk-zemin: hsl(var(--ton) 30% 97%);
+  --font: "Trebuchet MS"; 
   --bosluk-m: 1rem;
   --kose: 8px;
 }
-
 * {
   box-sizing: border-box;
 }
