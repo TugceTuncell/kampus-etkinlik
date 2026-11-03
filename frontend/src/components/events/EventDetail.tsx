@@ -1,13 +1,10 @@
+import { Link } from "react-router-dom";
 import type { CampusEvent } from "../../types/campus-event";
 import { formatDate } from "../../utils/format-date";
 
-interface EventDetailProps {
-  event: CampusEvent;
-  onBack: () => void;
-  onEdit: (id: string) => void;
-}
+interface EventDetailProps { event: CampusEvent; }
 
-function EventDetail({ event, onBack, onEdit }: EventDetailProps) {
+function EventDetail({ event }: EventDetailProps) {
   return (
     <div className="detay-sayfasi">
       {event.image && (
@@ -16,7 +13,6 @@ function EventDetail({ event, onBack, onEdit }: EventDetailProps) {
           <figcaption><i>{event.title} afişi</i></figcaption>
         </figure>
       )}
-
       <div className="kunye-kutu">
         <h2>Etkinlik Künyesi</h2>
         <dl>
@@ -26,18 +22,15 @@ function EventDetail({ event, onBack, onEdit }: EventDetailProps) {
           <dt>Kontenjan</dt><dd>{event.capacity} kişi</dd>
         </dl>
       </div>
-
       <div className="detay-aciklama">
         <h2>Açıklama</h2>
         <p>{event.description}</p>
       </div>
-
       <div className="detay-butonlar">
-        <button className="btn-git" onClick={onBack}>← Listeye dön</button>
-        <button className="btn-git" onClick={() => onEdit(event.id)}>Bu etkinliği güncelle</button>
+        <Link className="btn-git" to="/events">← Listeye dön</Link>
+        <Link className="btn-git" to={`/admin/${event.id}/edit`}>Bu etkinliği güncelle</Link>
       </div>
     </div>
   );
 }
-
 export default EventDetail;
