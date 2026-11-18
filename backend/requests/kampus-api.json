@@ -108,8 +108,7 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
-              "pm.test(\"Hata gövdesi doğru\", () => pm.expect(pm.response.json()).to.eql({error: {message: \"Event not found\"}}));"
+              "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));\npm.test(\"Hata gövdesi doğru\", () => pm.expect(pm.response.json()).to.eql({error: {message: \"Event not found\"}}));"
             ]
           }
         }

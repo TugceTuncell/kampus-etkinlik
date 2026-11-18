@@ -18,20 +18,27 @@ app.get("/health", (req, res) => {
 app.use("/events", eventRoutes);
 
 app.use((req, res) => {
-  res.status(404).json({ error: { message: "Route not found" } });
+  res.status(404).json({
+    error: { message: "Route not found" },
+  });
 });
 
-app.use((error, req, res, next) => {
-  if (res.headersSent) return next(error);
+app.use((err, req, res, next) => {
+  if (res.headersSent) {
+    return next(err);
+  }
 
-  const status = Number.isInteger(error.status) && error.status >= 400 && error.status < 500
-    ? error.status
-    : 500;
-  const message = error.type === "entity.parse.failed"
-    ? "Invalid JSON body"
-    : status === 500 ? "Internal server error" : error.message;
+  console.error(err.message);
 
-  res.status(status).json({ error: { message } });
+  if (err.type === "entity.parse.failed") {
+    return res.status(400).json({
+      error: { message: "Invalid JSON body" },
+    });
+  }
+
+  res.status(500).json({
+    error: { message: "Server error" },
+  });
 });
 
 export default app;
